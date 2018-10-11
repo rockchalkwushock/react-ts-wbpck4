@@ -6,6 +6,8 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
+  devtool: 'cheap-eval-source-map',
   entry: './src/index.tsx',
   output: {
     path: resolve(__dirname, 'public'),

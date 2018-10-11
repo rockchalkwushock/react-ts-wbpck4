@@ -6,9 +6,10 @@
   "author": "Cody Brunner <rockchalkwushock@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
-    "test": "jest --runInBand --updateSnapshot"
+    "build": "webpack",
+    "dev": "webpack-dev-server --config ./webpack.config.dev.js",
+    "test": "jest --runInBand --updateSnapshot",
+    "test:coverage": "yarn test --coverage"
   },
   "dependencies": {
     "react": "^16.5.2",
@@ -24,6 +25,7 @@
     "@types/react": "^16.4.16",
     "@types/react-dom": "^16.0.9",
     "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "jest-dom": "^2.0.4",
@@ -53,6 +55,18 @@
   },
   "jest": {
     "bail": true,
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "!src/index.tsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 30,
+        "functions": 30,
+        "lines": 30,
+        "statements": 30
+      }
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",
