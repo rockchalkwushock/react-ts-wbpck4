@@ -2,7 +2,9 @@
 
 exports[`<Hello /> should render 1`] = `
 <DocumentFragment>
-  <p>
+  <p
+    class="sc-bdVaJa hMjouN"
+  >
     Welcome to React with Webpack 4, Babel 7, and TypeScript.
   </p>
 </DocumentFragment>

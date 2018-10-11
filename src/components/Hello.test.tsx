@@ -19,9 +19,8 @@ describe('<Hello />', () => {
   })
   test('should render correct text', () => {
     const { container } = render(Component)
-    console.log(container.innerHTML)
-    expect(container.innerHTML).toEqual(
-      '<p>Welcome to React with Webpack 4, Babel 7, and TypeScript.</p>'
+    expect(container.textContent).toEqual(
+      'Welcome to React with Webpack 4, Babel 7, and TypeScript.'
     )
   })
 })
