@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Hello } from './components/Hello'
 
-const App = () => (
+export const App: React.SFC = () => (
   <Hello
     compiler="Webpack 4"
     framework="React"
@@ -10,5 +10,3 @@ const App = () => (
     types="TypeScript"
   />
 )
-
-export default App

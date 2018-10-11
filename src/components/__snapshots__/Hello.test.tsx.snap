@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Hello /> should render 1`] = `
-<p>
-  Welcome to React with Webpack 4, Babel 7, and TypeScript.
-</p>
+<DocumentFragment>
+  <p>
+    Welcome to React with Webpack 4, Babel 7, and TypeScript.
+  </p>
+</DocumentFragment>
 `;

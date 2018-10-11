@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { mount, render } from 'enzyme'
+import { render } from 'react-testing-library'
 
 import { Hello } from './Hello'
 
@@ -14,17 +14,14 @@ const Component = (
 
 describe('<Hello />', () => {
   test('should render', () => {
-    const tree = render(Component)
-    expect(tree).toMatchSnapshot()
+    const { asFragment } = render(Component)
+    expect(asFragment()).toMatchSnapshot()
   })
-  test('should have props', () => {
-    const wrapper = mount(Component)
-    const expected = {
-      compiler: 'Webpack 4',
-      framework: 'React',
-      transpiler: 'Babel 7',
-      types: 'TypeScript'
-    }
-    expect(wrapper.props()).toMatchObject(expected)
+  test('should render correct text', () => {
+    const { container } = render(Component)
+    console.log(container.innerHTML)
+    expect(container.innerHTML).toEqual(
+      '<p>Welcome to React with Webpack 4, Babel 7, and TypeScript.</p>'
+    )
   })
 })
